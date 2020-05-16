@@ -26,6 +26,7 @@
         "@fortawesome/fontawesome-free": "^5.13.0",
         "datatables.net-bs4": "^1.10.21",
         "datatables.net-buttons-bs4": "^1.6.2",
+        "flatpickr": "^4.6.3",
         "jquery-ujs": "^1.2.2"
     }
 }
