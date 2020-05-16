@@ -18,10 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/painel', 'HomeController@index');
 
 Route::prefix('painel')->namespace('Painel')->group(function () {
     Route::resource('categories', 'CategoryController');
+    Route::resource('automobiles', 'AutomobileController');
+    Route::resource('companies', 'CompanyController');
 });
 
 
