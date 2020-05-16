@@ -7,4 +7,6 @@ $(document).on('ajax:success', function(e, xhr){
     $('#modal').on('hidden.bs.modal', function () {
         $('.dataTable').DataTable().ajax.reload();
     })
+
+    $('#datePick').flatpickr({dateFormat: "d-m-Y", "locale": 'pt'});
 });

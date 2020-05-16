@@ -49,6 +49,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('companies.index')}}">Empresas</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('employees.index')}}">Funcionarios</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

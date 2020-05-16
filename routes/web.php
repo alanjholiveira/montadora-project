@@ -24,6 +24,7 @@ Route::prefix('painel')->namespace('Painel')->group(function () {
     Route::resource('categories', 'CategoryController');
     Route::resource('automobiles', 'AutomobileController');
     Route::resource('companies', 'CompanyController');
+    Route::resource('employees', 'EmployeeController');
 });
 
 
