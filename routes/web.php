@@ -11,16 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/**
+ * Rota de Autenticação
+ */
+Route::prefix('auth')->namespace('auth')->group(function () {
+    Route::get('login', 'LoginController@showLoginForm')->name('login');
+    Route::post('logout', 'LoginController@logout')->name('logout');
+    Route::post('login', 'LoginController@login');
 });
 
-Auth::routes();
+Route::middleware(['auth'])->namespace('Painel')->group(function () {
+    Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/painel', 'HomeController@index');
-
-Route::prefix('painel')->namespace('Painel')->group(function () {
     Route::resource('categories', 'CategoryController');
     Route::resource('automobiles', 'AutomobileController');
     Route::resource('companies', 'CompanyController');
