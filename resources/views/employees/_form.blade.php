@@ -101,10 +101,23 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
         <div class="form-group">
             {!! Form::label('inputCompanyId', 'Filial') !!}
             {!! Form::select('company_id', $companies, null, ['id' => 'company_id', 'class' => 'form-control', 'placeholder' => '::: Selecionar Empresa :::']) !!}
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <span class="icon text-white-500">
+                {!! Form::label('inputPassword', 'Senha') !!}
+                <a href="#" id="gerarSenha">
+                    <span style="color: orange;">
+                         <i class="fas fa-key shadow"></i>
+                    </span>
+                </a>
+            </span>
+            {!! Form::password('password', ['id' => 'password', 'class' => 'form-control', 'required']) !!}
         </div>
     </div>
 </div>
