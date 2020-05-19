@@ -46,7 +46,7 @@ class AutomobileController extends Controller
     {
         $automobile = Automobile::create($request->all());
 
-        return redirect()->route('automobiles.show', $automobile);
+        return redirect()->route('automobiles.show', $automobile)->with("success","Automóvel criado com Sucesso!");
     }
 
     /**
@@ -88,7 +88,7 @@ class AutomobileController extends Controller
     {
         $automobile->update($request->all());
 
-        return redirect()->route('automobiles.show', $automobile);
+        return redirect()->route('automobiles.show', $automobile)->with("success","Automóvel alterada com Sucesso!");
     }
 
     /**

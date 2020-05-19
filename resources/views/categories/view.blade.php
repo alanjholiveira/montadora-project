@@ -3,6 +3,7 @@
 @section('title', 'Visualização')
 
 @section('content')
+    @include('layouts._messages')
     <div class="card shadow">
         <div class="card-body">
             <div class="form-group row">

@@ -40,7 +40,7 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->all());
 
-        return redirect()->route('categories.show', $category);
+        return redirect()->route('categories.show', $category)->with("success","Categoria criada com Sucesso!");
     }
 
     /**
@@ -51,8 +51,6 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //$category = Category::findOrFail($id);
-
         return view('categories.view', ['category' => $category]);
     }
 
@@ -64,8 +62,6 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //$category = Category::findOrFail($id);
-
         return view('categories.edit', ['category' => $category]);
     }
 
@@ -76,12 +72,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//    public function update(Request $request, $id)
     public function update(CategoryRequest $request, Category $category)
     {
         $category->update($request->all());
 
-        return redirect()->route('categories.show', $category);
+        return redirect()->route('categories.show', $category)->with("success","Categoria alterada com Sucesso!");
     }
 
     /**
@@ -92,7 +87,6 @@ class CategoryController extends Controller
      */
     public function destroy(Request $request, Category $category)
     {
-
         if($request->ajax()){
             return view('categories.destroy', ['category' => $category]);
         }else{

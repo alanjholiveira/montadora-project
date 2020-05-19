@@ -44,7 +44,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::create($request->all());
 
-        return redirect()->route('employees.show', $employee);
+        return redirect()->route('employees.show', $employee)->with("success","Funcionário cadastrado com Sucesso!");
     }
 
     /**
@@ -84,7 +84,7 @@ class EmployeeController extends Controller
     {
         $employee->update($request->all());
 
-        return redirect()->route('employees.show', $employee);
+        return redirect()->route('employees.show', $employee)->with("success","Funcionário alterada com Sucesso!");
     }
 
     /**

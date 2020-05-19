@@ -41,7 +41,7 @@ class CompanyController extends Controller
     {
         $company = Company::create($request->all());
 
-        return redirect()->route('companies.show', $company);
+        return redirect()->route('companies.show', $company)->with("success","Empresa criada com Sucesso!");
     }
 
     /**
@@ -77,7 +77,7 @@ class CompanyController extends Controller
     {
         $company->update($request->all());
 
-        return redirect()->route('companies.show', $company);
+        return redirect()->route('companies.show', $company)->with("success","Empresa alterada com Sucesso!");
     }
 
     /**

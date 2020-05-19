@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-md-3">
-        {!! Form::label('inputSituation', 'Situação Cadastral') !!}
+        {!! Form::label('situation', 'Situação Cadastral') !!}
         <div class="form-group">
-            {!! Form::label('inputMatrix', 'Ativo') !!}
+            {!! Form::label('inputSituation', 'Ativo') !!}
             {{ Form::radio('situation', 'active', true) }}
-            {!! Form::label('inputFilial', 'Inativo') !!}
+            {!! Form::label('inputSituation', 'Inativo') !!}
             {{ Form::radio('situation','inactive', null) }}
         </div>
     </div>
@@ -19,32 +19,32 @@
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            {!! Form::label('inputYear', 'Data de Nascimento') !!}
+            {!! Form::label('inputDateBirth', 'Data de Nascimento') !!}
             {!! Form::text('date_birth', null, ['id' => 'datePick', 'class' => 'form-control', 'required']) !!}
         </div>
     </div>
     <div class="col-md-2">
         <div class="form-group">
-            {!! Form::label('inputModel', 'Sexo') !!}
-            {!! Form::text('gender', null, ['class' => 'form-control', 'required']) !!}
+            {!! Form::label('inputGender', 'Sexo') !!}
+            {!! Form::select('gender', ['M' => 'Masculino', 'F' => 'Feminino'], null, ['placeholder' => 'Sexo..','class' => 'form-control', 'required']); !!}
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('inputCpf', 'CPF') !!}
             {!! Form::text('cpf', null, ['class' => 'form-control', 'required']) !!}
         </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
         <div class="form-group">
             {!! Form::label('inputOccupation', 'Função') !!}
             {!! Form::text('occupation', null, ['class' => 'form-control', 'required']) !!}
         </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('inputSalary', 'Salario') !!}
             {!! Form::text('salary', null, ['class' => 'form-control', 'required']) !!}
@@ -74,10 +74,41 @@
 </div>
 
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('inputState', 'Estado') !!}
-            {!! Form::text('state', null, ['class' => 'form-control', 'required']) !!}
+            {{--            {!! Form::text('state', null, ['class' => 'form-control', 'required']) !!}--}}
+            {!! Form::select('state',
+                        [
+                            'AC' => 'Acre',
+                            'AL' => 'Alagoas',
+                            'AP' => 'Amapá',
+                            'AM' => 'Amazonas',
+                            'BA' => 'Bahia',
+                            'CE' => 'Ceará',
+                            'DF' => 'Distrito Federal',
+                            'ES' => 'Espirito Santo',
+                            'GO' => 'Goiás',
+                            'MA' => 'Maranhão',
+                            'MS' => 'Mato Grosso do Sul',
+                            'MT' => 'Mato Grosso',
+                            'MG' => 'Minas Gerais',
+                            'PA' => 'Pará',
+                            'PB' => 'Paraíba',
+                            'PR' => 'Paraná',
+                            'PE' => 'Pernambuco',
+                            'PI' => 'Piauí',
+                            'RJ' => 'Rio de Janeiro',
+                            'RN' => 'Rio Grande do Norte',
+                            'RS' => 'Rio Grande do Sul',
+                            'RO' => 'Rondônia',
+                            'RR' => 'Roraima',
+                            'SC' => 'Santa Catarina',
+                            'SP' => 'São Paulo',
+                            'SE' => 'Sergipe',
+                            'TO' => 'Tocantins',
+                         ]
+                        , null, ['class' => 'form-control', 'placeholder' => 'Estado..', 'required']); !!}
         </div>
     </div>
     <div class="col-md-2">
@@ -86,7 +117,7 @@
             {!! Form::text('country', null, ['class' => 'form-control', 'required']) !!}
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('inputPhone', 'Telefone') !!}
             {!! Form::text('phone', null, ['class' => 'form-control', 'required']) !!}
@@ -111,13 +142,15 @@
         <div class="form-group">
             <span class="icon text-white-500">
                 {!! Form::label('inputPassword', 'Senha') !!}
-                <a href="#" id="gerarSenha">
+                <a href="#" id="gerarSenha" class="text-dark-50 small">
                     <span style="color: orange;">
                          <i class="fas fa-key shadow"></i>
                     </span>
+                    (Gerar Senha)
                 </a>
             </span>
-            {!! Form::password('password', ['id' => 'password', 'class' => 'form-control', 'required']) !!}
+            {!! Form::password('password', ['id' => 'password', 'class' => 'form-control']) !!}
+            <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
         </div>
     </div>
 </div>

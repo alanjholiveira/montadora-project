@@ -10,6 +10,19 @@ $(document).on('ajax:success', function(e, xhr){
 
     $('#datePick').flatpickr({dateFormat: "d-m-Y", "locale": 'pt'});
 
+    $(".toggle-password").click(function() {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+
+
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+
     $("#gerarSenha").on("click", function(){
         $("#password").val(CreateRandomPassword( 12 , true, true, true, ''));
     })

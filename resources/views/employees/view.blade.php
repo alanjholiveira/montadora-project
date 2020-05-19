@@ -3,6 +3,7 @@
 @section('title', 'Visualização')
 
 @section('content')
+    @include('layouts._messages')
     <div class="card shadow">
         <div class="card-body">
             <div class="row">
@@ -81,10 +82,40 @@
             </div>
 
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="form-group">
                         {!! Form::label('inputState', 'Estado') !!}
-                        {!! Form::text('state', $employee->state, ['class' => 'form-control', 'disabled']) !!}
+                        {!! Form::select('state',
+                        [
+                            'AC' => 'Acre',
+                            'AL' => 'Alagoas',
+                            'AP' => 'Amapá',
+                            'AM' => 'Amazonas',
+                            'BA' => 'Bahia',
+                            'CE' => 'Ceará',
+                            'DF' => 'Distrito Federal',
+                            'ES' => 'Espirito Santo',
+                            'GO' => 'Goiás',
+                            'MA' => 'Maranhão',
+                            'MS' => 'Mato Grosso do Sul',
+                            'MT' => 'Mato Grosso',
+                            'MG' => 'Minas Gerais',
+                            'PA' => 'Pará',
+                            'PB' => 'Paraíba',
+                            'PR' => 'Paraná',
+                            'PE' => 'Pernambuco',
+                            'PI' => 'Piauí',
+                            'RJ' => 'Rio de Janeiro',
+                            'RN' => 'Rio Grande do Norte',
+                            'RS' => 'Rio Grande do Sul',
+                            'RO' => 'Rondônia',
+                            'RR' => 'Roraima',
+                            'SC' => 'Santa Catarina',
+                            'SP' => 'São Paulo',
+                            'SE' => 'Sergipe',
+                            'TO' => 'Tocantins',
+                         ]
+                        , $employee->state, ['class' => 'form-control', 'placeholder' => 'Estado..', 'disabled']); !!}
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -93,7 +124,7 @@
                         {!! Form::text('country', $employee->country, ['class' => 'form-control', 'disabled']) !!}
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         {!! Form::label('inputPhone', 'Telefone') !!}
                         {!! Form::text('phone', $employee->phone, ['class' => 'form-control', 'disabled']) !!}

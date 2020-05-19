@@ -12194,3 +12194,12 @@ footer.sticky-footer {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%;
 }
+
+.field-icon {
+    float: right;
+    margin-right: 3px;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
