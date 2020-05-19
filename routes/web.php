@@ -22,6 +22,8 @@ Route::prefix('auth')->namespace('auth')->group(function () {
 
 Route::middleware(['auth'])->namespace('Painel')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('changePassword', 'HomeController@showChangePassword')->name('showChangePassword');
+    Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
 
     Route::resource('categories', 'CategoryController');
     Route::resource('automobiles', 'AutomobileController');
