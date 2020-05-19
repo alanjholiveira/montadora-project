@@ -25,9 +25,10 @@ class EmployeeRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'date_birth' => 'required',
+            'date_birth' => 'required|date',
             'gender' => 'required',
-            'cpf' => 'required',
+            'cpf' => 'required|numeric|exists:employees,cpf',
+            'password' => 'required|min:8',
             'occupation' => 'required',
             'salary' => 'required',
             'address' => 'required',

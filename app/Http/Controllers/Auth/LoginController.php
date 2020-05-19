@@ -72,7 +72,7 @@ class LoginController extends Controller
     protected function validateLogin(Request $request)
     {
         $request->validate([
-            'cpf' => 'required|int|min:11',
+            'cpf' => 'required|numeric|min:11',
             'password' => 'required|string',
         ]);
     }
